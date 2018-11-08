@@ -6,7 +6,7 @@ import {log} from './log';
 import {routes} from './routes';
 
 const server = new Hapi.Server({
-  port: config.port
+  port: config.port,
 });
 
 server.route(routes);
@@ -16,5 +16,4 @@ server.start()
     log.error(err);
   }).then((idk) => {
     console.log(`Server running on port ${config.port}`);
-  }
-);
+  });

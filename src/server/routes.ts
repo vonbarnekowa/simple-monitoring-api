@@ -3,5 +3,5 @@ export const routes = [{
   path: '/',
   handler: () => {
     return 'hello world!';
-  }
+  },
 }];

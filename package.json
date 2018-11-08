@@ -19,8 +19,10 @@
   "homepage": "https://github.com/vonbarnekowa/simple-monitoring-api#readme",
   "dependencies": {
     "@types/hapi": "^17.6.2",
+    "@types/mongoose": "^5.3.1",
     "@types/winston": "^2.4.4",
     "hapi": "^17.7.0",
+    "mongoose": "^5.3.10",
     "winston": "^3.1.0"
   },
   "devDependencies": {
