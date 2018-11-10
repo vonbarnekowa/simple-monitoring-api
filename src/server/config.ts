@@ -1,3 +1,3 @@
 export const config = {
-  port: process.env.NODE_PORT || 3030,
+  port: process.env.NODE_PORT || 3031,
 };
