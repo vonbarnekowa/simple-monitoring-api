@@ -3,9 +3,9 @@ import * as hapi from 'hapi';
 import * as mongoose from 'mongoose';
 
 import {ObjectID} from 'bson';
-import {MonitorSchema} from '../schemas/Monitors';
-import {Constants} from '../contants';
 import {Document} from 'mongoose';
+import {Constants} from '../contants';
+import {MonitorSchema} from '../schemas/Monitors';
 
 interface IFeedback {
   date: Date;
@@ -15,13 +15,13 @@ interface IFeedback {
 
 interface IMonitor extends Document {
 
-  user_id: mongoose.Schema.Types.ObjectId,
-  name: String,
-  is_public: Boolean,
-  address: String,
-  frequency: Number,
-  status: Number,
-  feedbacks: [IFeedback],
+  user_id: mongoose.Schema.Types.ObjectId;
+  name: string;
+  is_public: boolean;
+  address: string;
+  frequency: number;
+  status: number;
+  feedbacks: [IFeedback];
 }
 
 const Monitor = mongoose.model('monitors', MonitorSchema);
