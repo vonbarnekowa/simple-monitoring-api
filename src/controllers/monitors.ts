@@ -62,6 +62,7 @@ export const addFeedback = async (request: hapi.Request) => {
     .then((monitor) => {
       if (monitor) {
         (monitor as IMonitor).feedbacks.push({date: payload.date, is_up: payload.is_up, agent_id: payload.agent_id});
+        (monitor as IMonitor).status = (payload.is_up ? 0 : 2);
         monitor.save();
         return monitor;
       } else {
