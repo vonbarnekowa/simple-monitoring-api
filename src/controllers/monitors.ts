@@ -1,7 +1,7 @@
 import * as boom from 'boom';
 import * as hapi from 'hapi';
 import * as mongoose from 'mongoose';
-import * as Slack from 'typed-slack'
+import * as Slack from 'typed-slack';
 
 import {ObjectID} from 'bson';
 import {Document} from 'mongoose';
@@ -75,17 +75,17 @@ export const addFeedback = async (request: hapi.Request) => {
     });
 };
 
-const checkForSlackNotification = (monitor: IMonitor, is_up: boolean) => {
-  if (monitor.status != (is_up ? 0 : 2)) {
-    let slack = new Slack.IncomingWebhook(process.env.SLACK_KEY);
-    slack.send({ text: monitor.name + ' (' + monitor.address + ') ' + ' is ' + (is_up ? 'up' : 'down')})
+const checkForSlackNotification = (monitor: IMonitor, isUp: boolean) => {
+  if (monitor.status != (isUp ? 0 : 2)) {
+    const slack = new Slack.IncomingWebhook(process.env.SLACK_KEY);
+    slack.send({ text: monitor.name + ' (' + monitor.address + ') ' + ' is ' + (isUp ? 'up' : 'down')})
       .then((error: Error) => {
         if (error) {
-          log.error(error)
+          log.error(error);
         }
       }).catch((error: Error) => {
         if (error) {
-          log.error(error)
+          log.error(error);
         }
     });
   }
