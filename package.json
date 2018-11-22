@@ -25,6 +25,7 @@
     "hapi": "^17.7.0",
     "hapi-auth-jwt2": "^8.1.0",
     "mongoose": "^5.3.10",
+    "typed-slack": "^0.1.3",
     "winston": "^3.1.0"
   },
   "devDependencies": {
